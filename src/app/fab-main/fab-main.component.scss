@@ -1,0 +1,278 @@
+h4 {
+    color: #333;
+    font-size: 1.2em;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+input[type='text'] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: #b3b3b3;
+        cursor: not-allowed;
+    }
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
+
+div {
+    color: #ffffff;
+}
+
+h4 {
+    color: #ffffff;
+}
+
+#footer a {
+    color: #ff0000;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#footer {
+    height: 60px;  // Adjust this value as needed
+    background-color: #297fb984 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#footer p {
+    margin: 2.5px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div {
+    & #logo {
+        display: block;
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+    }
+
+    & #rules {
+        text-align: center;
+        button {
+            background-color: #163782;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    }
+
+    & #content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.loginButton {
+    margin: 30px 20px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-label {
+    display: block;
+    text-align: center;
+}
+
+#loginInput {
+    position: relative;
+    margin: 10px 20px;
+}
+
+#valid{
+    color: #00FF00;
+}
+
+#invalid{
+    color: red;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;  // Adjust this as needed
+}
+
+.container {
+    display: flex;
+}
+.rules-text{
+    color:#f45052 !important;
+}
+
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+.side-nav {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+  
+  .side-nav.show {
+    transform: translateX(0);
+  }
+  
+  .side-nav a {
+    color: white;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .side-nav a:hover {
+    color: #f1f1f1;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .hamburger {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1;
+  }
+  
+  .bar {
+    width: 2rem;
+    height: 0.25rem;
+    background: #333;
+    border: 1px solid rgba(255, 255, 255, 0.515); // Add a 1px white border
+    border-radius: 10px;
+    transition: 0.3s;
+    z-index: 1;
+}
+.logout-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#origin-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+.side-nav-link {
+    display: block;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.link-div{
+    margin-top: 20%;
+}
+.chat-container {
+  position: fixed;
+  right: 0;
+  bottom: 60px;
+  width: 200px;
+}

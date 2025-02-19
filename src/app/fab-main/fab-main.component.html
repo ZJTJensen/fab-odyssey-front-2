@@ -1,0 +1,89 @@
+<button class="hamburger" (click)="toggleNav()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </button>
+
+<div class="side-nav" [class.show]="showNav">
+    <p (click)="toggleNav()" class="close">X</p>
+    <div class="link-div">
+        <p (click)="toggleMap()" class="side-nav-link">World Map</p>
+    </div>
+    <div class="link-div">
+        <p (click)="showDeckBuilder = true" class="side-nav-link">Deck Builder</p>
+    </div>
+    <div *ngIf="isLoggedIn">
+        <p (click)="logoutSession()" class="logout-button">Logout</p>
+    </div>
+</div>
+
+<div *ngIf="showDeckBuilder">
+</div>
+<div id="content" *ngIf="!showDeckBuilder">
+    <div>
+        <img id="logo" src="../../assets/logo.png">
+        <div id="rules">
+            <button class="rules-text" *ngIf="!displayRules" (click)="toggleRules()">Show Rules</button>
+            <app-rules *ngIf="displayRules">
+                
+            </app-rules>
+            <button *ngIf="displayRules" (click)="toggleRules()" class="rules-text">Hide Rules</button>
+        </div>
+    </div>
+
+    <!--Need new login, frick we are doing a usual user password-->
+    <div *ngIf="!userInfo && !logingIn">
+        <app-login></app-login>
+    </div>
+   
+    <div *ngIf="logingIn">
+        <div class="spinner"></div>
+        Fetching user data...
+    </div>
+    <app-user-info 
+    *ngIf="response.slug !== undefined  && userInfo"
+        [userInfo]="userInfo" [limiters]="limiters" [cardList]="cardList"[owenedCards]="owenedCards" [logingIn]="logingIn"
+        [isDeckValid]="isDeckValid"
+        [cardsNotOwned]="cardsNotOwned"
+        [selectedHero]="selectedHero"
+        (quit)="quit($event)" 
+        (selectedCard)="saveSelectedCard($event)"
+        (increaseLevel)="increaseLevel()">
+    </app-user-info>
+
+    <div class="map-container" *ngIf="showMap">
+        <world-map class="overlay-map" (areaClicked)="handleAreaClicked($event)">
+        </world-map>
+    </div>
+    <div class="deck-builder-containter" *ngIf="showDeckBuilder">
+       <deck-builder></deck-builder>
+    </div>
+    <div class="chat-container" *ngIf="isLoggedIn" >
+        <div (click)="toggleChat()" class="diplay-chat-header">
+            Display chat
+        </div>
+        <chat *ngIf="displayChat" [userInfo]="userInfo">
+        </chat>
+    </div>
+</div>
+
+
+<div id="footer">
+    <p>
+        Join the 
+        <a href="https://discord.gg/vb2c3gTy2e" target="_blank">
+            Discord
+        </a>
+    </p>
+    <p>
+        Follow me on 
+        <a href="https://twitter.com/St_Havock" target="_blank">
+            Twitter
+        </a>
+        <a href="https://www.youtube.com/@St_Havock" target="_blank">
+            YouTube
+        </a>
+    </p>
+    <p>&copy; 2024 FabOdyssey. All rights reserved.</p>
+    <img id="origin-icon" src="">
+</div>
