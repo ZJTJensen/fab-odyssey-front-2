@@ -20,14 +20,13 @@ import { Renderer2, ElementRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'app-fab-main',
-  standalone: true,
-  imports: [CommonModule, CardSelectComponent, UserInfoComponent,
-    WorldMapComponent, NgxMaskDirective, NgxMaskPipe, RulesComponent,
-    ChatComponent, DeckBuilderComponent, LoginComponent],
-  providers: [provideNgxMask()],
-  templateUrl: './fab-main.component.html',
-  styleUrl: './fab-main.component.scss'
+    selector: 'app-fab-main',
+    imports: [CommonModule, CardSelectComponent, UserInfoComponent,
+        WorldMapComponent, NgxMaskDirective, NgxMaskPipe, RulesComponent,
+        ChatComponent, DeckBuilderComponent, LoginComponent],
+    providers: [provideNgxMask()],
+    templateUrl: './fab-main.component.html',
+    styleUrl: './fab-main.component.scss'
 })
 export class FabMainComponent implements OnInit{
 
